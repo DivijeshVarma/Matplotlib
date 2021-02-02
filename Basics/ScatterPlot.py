@@ -5,7 +5,7 @@ y_values = [x**2 for x in x_values]
 
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
-ax.scatter(x_values, y_values, s=10)
+ax.scatter(x_values, y_values, c=y_values, cmap=plt.cm.Blues, s=10)
 
 # set chart title and label axis
 ax.set_title('Square Numbers', fontsize=24)
@@ -20,5 +20,8 @@ ax.ticklabel_format(useOffset=False, style='plain')
 # set range of each axis
 ax.axis([0, 1100, 0, 1100000])
 plt.tight_layout()
+
+# Saving Your Plots Automatically
+# plt.savefig('square.png', bbox_inches='tight')
 
 plt.show()
