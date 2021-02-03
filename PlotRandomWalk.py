@@ -3,7 +3,7 @@ from RandomWalk import RandomWalk
 
 while True:
     # Make a random walk.
-    rw = RandomWalk(50_000)
+    rw = RandomWalk(10_000)
     rw.fill_walk()
 
     # Plot the points in the walk.
