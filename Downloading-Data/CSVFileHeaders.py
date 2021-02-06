@@ -7,5 +7,14 @@ with open(file) as f:
     # print(header_row)
 
 # The enumerate() function returns both the index of each item and the value of each item as you loop through a list.
-for index, column_header in enumerate(header_row):
-    print(index, column_header)
+# for index, column_header in enumerate(header_row):
+#     print(index, column_header)
+
+    # getting high temp from file
+    highs = []
+
+    for data in reader:
+        high = int(data[5])
+        highs.append(high)
+
+print(highs)
