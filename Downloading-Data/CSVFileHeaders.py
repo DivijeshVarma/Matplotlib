@@ -14,24 +14,28 @@ with open(file) as f:
     #     print(index, column_header)
 
     # getting high temp from file
-    dates, highs = [], []
+    dates, highs, lows = [], [], []
 
     for data in reader:
         current_date = datetime.strptime(data[2], '%Y-%m-%d')
         high = int(data[5])
+        low = int(data[6])
         dates.append(current_date)
         highs.append(high)
+        lows.append(low)
 
 print(highs)
+print(lows)
 print(dates)
 
 # plot High temp
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
 ax.plot(dates, highs, c='red')
+ax.plot(dates, lows, c='blue')
 
 # Format plot
-plt.title("Daily high temperatures - 2018", fontsize=24)
+plt.title("Daily high & low temperatures - 2018", fontsize=24)
 plt.xlabel('', fontsize=16)
 plt.ylabel('Temperature (F)', fontsize=16)
 fig.autofmt_xdate()
