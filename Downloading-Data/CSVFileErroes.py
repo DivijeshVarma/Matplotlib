@@ -47,5 +47,7 @@ plt.ylabel('Temperature (F)', fontsize=16)
 fig.autofmt_xdate()
 # plt.tight_layout()
 plt.tick_params(axis='both', which='major', labelsize=16)
+plt.ylim(20, 130)
+
 
 plt.show()
