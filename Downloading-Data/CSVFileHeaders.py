@@ -24,15 +24,17 @@ with open(file) as f:
         highs.append(high)
         lows.append(low)
 
-print(highs)
-print(lows)
-print(dates)
+# print(highs)
+# print(lows)
+# print(dates)
 
 # plot High temp
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
-ax.plot(dates, highs, c='red')
-ax.plot(dates, lows, c='blue')
+ax.plot(dates, highs, c='red', alpha=0.5)
+ax.plot(dates, lows, c='blue', alpha=0.5)
+# Shading an Area in the Chart
+ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
 
 # Format plot
 plt.title("Daily high & low temperatures - 2018", fontsize=24)
